@@ -98,7 +98,7 @@ public class ArrayMethods2
 				int sub = list[pivotpos];
 				list[pivotpos] = list[i];
 				list[i] = sub;
-				pivotpos++;
+				pivotpos--;
 			}
 		}
 		return pivotpos;
