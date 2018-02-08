@@ -1,4 +1,5 @@
-
+//Steven Fong
+//Period 2
 public class ArrayMethods2 
 {
 	public static String[] merge(String [] arr1, String[] arr2)
@@ -71,20 +72,85 @@ public class ArrayMethods2
 	
 	public static int partition(int[] list)
 	{
-		int pivot = list[0];
-		int pivotpos = list.length - 1;
+		/*int pivot = list[0];
+		int holdpos = list.length - 1;
 		for (int i = list.length - 1; i >= 1; i--)
 		{
 			if (list[i] > pivot)
 			{
-				int sub = list[pivotpos];
-				list[pivotpos] = list[i];
-				list[i] = sub;
-				pivotpos--;
+				if (i != holdpos)
+				{
+					int sub = list[holdpos];
+					list[holdpos] = list[i];
+					list[i] = sub;
+				}
+				holdpos--;
 			}
 		}
-		list[0] = list[pivotpos];
-		list[pivotpos] = pivot;
+		list[0] = list[holdpos];
+		list[holdpos] = pivot;
+		return holdpos;*/
+		
+		int pivot = list[0];
+		int pivotpos = 0; //actual position of the pivot after being swapped
+		int direction = 1;
+		int i = list.length - 1;
+		while (i != pivotpos)
+		{
+			while (direction % 2 == 1)
+			{
+				if (i == pivotpos)
+				{
+					break;
+				}
+				
+				if (list[i] >= pivot)
+				{
+					i--;
+				}
+				
+				else if (list[i] < pivot)
+				{
+					int sub = list[pivotpos];
+					list[pivotpos] = list[i];
+					list[i] = sub;
+					
+					int subpos = i;
+					i = pivotpos;
+					pivotpos = subpos;
+					i++;
+					
+					direction++;
+				}
+			}
+			
+			while (direction % 2 == 0)
+			{
+				if (i == pivotpos)
+				{
+					break;
+				}
+				
+				if (list[i] <=  pivot)
+				{
+					i++;
+				}
+				
+				else if (list[i] > pivot)
+				{
+					int sub = list[pivotpos];
+					list[pivotpos] = list[i];
+					list[i] = sub;
+					
+					int subpos = i;
+					i = pivotpos;
+					pivotpos = subpos;
+					i--;
+					
+					direction++;
+				}
+			}
+		}
 		return pivotpos;
 	}
 }
