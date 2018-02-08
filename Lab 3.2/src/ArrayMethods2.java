@@ -93,17 +93,12 @@ public class ArrayMethods2
 		
 		int pivot = list[0];
 		int pivotpos = 0; //actual position of the pivot after being swapped
-		int direction = 1;
+		//int direction = 1;
 		int i = list.length - 1;
 		while (i != pivotpos)
 		{
-			while (direction % 2 == 1)
-			{
-				if (i == pivotpos)
-				{
-					break;
-				}
-				
+			while (pivotpos < i)
+			{	
 				if (list[i] >= pivot)
 				{
 					i--;
@@ -119,18 +114,11 @@ public class ArrayMethods2
 					i = pivotpos;
 					pivotpos = subpos;
 					i++;
-					
-					direction++;
 				}
 			}
 			
-			while (direction % 2 == 0)
+			while (pivotpos > i)
 			{
-				if (i == pivotpos)
-				{
-					break;
-				}
-				
 				if (list[i] <=  pivot)
 				{
 					i++;
@@ -146,8 +134,6 @@ public class ArrayMethods2
 					i = pivotpos;
 					pivotpos = subpos;
 					i--;
-					
-					direction++;
 				}
 			}
 		}
