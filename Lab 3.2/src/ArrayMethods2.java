@@ -1,5 +1,6 @@
 //Steven Fong
 //Period 2
+//wow
 public class ArrayMethods2 
 {
 	public static String[] merge(String [] arr1, String[] arr2)
