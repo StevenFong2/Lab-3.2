@@ -9,7 +9,37 @@ public class ArrayMethods2
 		int index1 = 0;
 		int index2 = 0;
 		int indexresult = 0;
-		while(indexresult < result.length)
+		
+		while (index1 < arr1.length && index2 < arr2.length)
+		{
+			if (arr1[index1].compareTo(arr2[index2]) <= 0)
+			{
+				result[indexresult] = arr1[index1];
+				index1++;
+			}
+			
+			else if (arr1[index1].compareTo(arr2[index2]) > 0)
+			{
+				result[indexresult] = arr2[index2];
+				index2++;
+			}
+			indexresult++;
+		}
+		
+		while (index1 < arr1.length)
+		{
+			result[indexresult] = arr1[index1];
+			index1++;
+			indexresult++;
+		}
+		
+		while (index2 < arr2.length)
+		{
+			result[indexresult] = arr2[index2];
+			index2++;
+			indexresult++;
+		}
+		/*while(indexresult < result.length)
 		{
 			if (index1 == arr1.length)
 			{
@@ -35,7 +65,7 @@ public class ArrayMethods2
 				index2++;
 			}
 			indexresult++;
-		}
+		}*/
 		
 		/*while (indexresult < result.length)
 		{
