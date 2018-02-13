@@ -17,6 +17,7 @@ public class Test
 		String [] test1 = {"apple", "cucumber", "microsoft", "zorro"};
 		String [] test2 = {"banana", "cherry", "mahogany", "oreos", "pinata"};
 		int [] test3 = {3,4,2,7,12,22,0,1};
+		String[] test4 = {"death", "plunder", "chaos", "gore", "flu", " plague", "satan", "sixsixsix", "pentagon"};
 		
 		long start = System.nanoTime();
 		String [] mergeResult = ArrayMethods2.merge(test1, test2);
@@ -24,6 +25,14 @@ public class Test
 		long time = end - start;
 		System.out.println("Merge test took: " + time + " nanoseconds");
 		print(mergeResult);
+		
+		start = System.nanoTime();
+		String[] result = FinalSorts.mergeSort(test4);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Merge test took: " + time + " nanoseconds");
+		print(result);
+
 		
 		start = System.nanoTime();
 		int pivotFinalPos = ArrayMethods2.partition(test3);
