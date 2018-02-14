@@ -17,7 +17,7 @@ public class Test
 		String [] test1 = {"apple", "cucumber", "microsoft", "zorro"};
 		String [] test2 = {"banana", "cherry", "mahogany", "oreos", "pinata"};
 		int [] test3 = {3,4,2,7,12,22,0,1};
-		String[] test4 = {"death", "plunder", "chaos", "gore", "flu", " plague", "satan", "sixsixsix", "pentagon"};
+		String[] test4 = {"death", "plunder", "chaos", "gore", "flu", "plague", "satan", "sixsixsix", "pentagon"};
 		
 		long start = System.nanoTime();
 		String [] mergeResult = ArrayMethods2.merge(test1, test2);
