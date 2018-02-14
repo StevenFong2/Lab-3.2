@@ -26,4 +26,65 @@ public class FinalSorts
 		}*/
 		return(ArrayMethods2.merge(mergeSort(left), mergeSort(right)));
 	}
+	
+	public static int partition(int[] list, int front, int back)
+	{
+		int pivot = list[front];
+		int pivotpos = front;
+		int i = back - 1;
+		while (i != pivotpos)
+		{
+			while (pivotpos < i)
+			{	
+				if (list[i] >= pivot)
+				{
+					i--;
+				}
+				
+				else if (list[i] < pivot)
+				{
+					int sub = list[pivotpos];
+					list[pivotpos] = list[i];
+					list[i] = sub;
+					
+					int subpos = i;
+					i = pivotpos;
+					pivotpos = subpos;
+					i++;
+				}
+			}
+			
+			while (pivotpos > i)
+			{
+				if (list[i] <=  pivot)
+				{
+					i++;
+				}
+				
+				else if (list[i] > pivot)
+				{
+					int sub = list[pivotpos];
+					list[pivotpos] = list[i];
+					list[i] = sub;
+					
+					int subpos = i;
+					i = pivotpos;
+					pivotpos = subpos;
+					i--;
+				}
+			}
+		}
+		return pivotpos;
+	}
+	
+	public static void quickSort(int[] list, int front, int back)
+	{
+		if (back > front)
+		{
+			int pindex = partition(list, front, back);
+			
+			quickSort(list, front, pindex);
+			quickSort(list, pindex, back);
+		}
+	}
 }
