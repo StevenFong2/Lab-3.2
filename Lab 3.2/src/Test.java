@@ -62,7 +62,7 @@ public class Test
 		FinalSorts.quickSort(test3, 0, test3.length);
 		end = System.nanoTime();
 		time = end - start;
-		System.out.println("MergeSort test took: " + time + " nanoseconds");
+		System.out.println("QuickSort test took: " + time + " nanoseconds");
 		print(test3);
 		
 	}
