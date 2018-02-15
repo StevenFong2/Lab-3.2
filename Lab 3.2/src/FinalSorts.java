@@ -31,6 +31,27 @@ public class FinalSorts
 	
 	public static int partition(int[] list, int front, int back)
 	{
+		
+		int pivot = list[front];
+		int holdpos = back - 1;
+		for (int i = holdpos; i >= 1; i--)
+		{
+			if (list[i] > pivot)
+			{
+				if (i != holdpos)
+				{
+					int sub = list[holdpos];
+					list[holdpos] = list[i];
+					list[i] = sub;
+				}
+				holdpos--;
+			}
+		}
+		list[front] = list[holdpos];
+		list[holdpos] = pivot;
+		return holdpos;
+		
+		/*
 		int pivot = list[front];
 		int pivotpos = front;
 		int i = back - 1;
@@ -77,6 +98,7 @@ public class FinalSorts
 			}
 		}
 		return pivotpos;
+		*/
 	}
 	
 	public static void quickSort(int[] list, int front, int back)
