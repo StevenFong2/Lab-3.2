@@ -19,20 +19,18 @@ public class Test
 		int [] test3 = {3,4,2,7,12,22,0,1};
 		String[] test4 = {"death", "plunder", "chaos", "gore", "flu", "plague", "satan", "sixsixsix", "pentagon"};
 		
-		long start = System.nanoTime();
-		String [] mergeResult = ArrayMethods2.merge(test1, test2);
-		long end = System.nanoTime();
-		long time = end - start;
-		System.out.println("Merge test took: " + time + " nanoseconds");
-		print(mergeResult);
+		long start;
+		long end;
+		long time;
 		
+		//Testing helper methods
+		/*
 		start = System.nanoTime();
-		String[] result = FinalSorts.mergeSort(test4);
+		String [] mergeResult = ArrayMethods2.merge(test1, test2);
 		end = System.nanoTime();
 		time = end - start;
 		System.out.println("Merge test took: " + time + " nanoseconds");
-		print(result);
-
+		print(mergeResult);
 		
 		start = System.nanoTime();
 		int pivotFinalPos = ArrayMethods2.partition(test3);
@@ -40,6 +38,31 @@ public class Test
 		time = end - start;
 		System.out.println("Partition test took: " + time + " nanoseconds");
 		System.out.println("Final Pivot Position: " + pivotFinalPos);
+		print(test3);
+		
+		start = System.nanoTime();
+		int pivotpos = FinalSorts.partition(test3, 0, test3.length);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("Partition test took: " + time + " nanoseconds");
+		System.out.println("Final Pivot Position: " + pivotFinalPos);
+		print(test3);
+		*/
+		
+		//Testing Sorting algorithms
+		
+		start = System.nanoTime();
+		String[] result = FinalSorts.mergeSort(test4);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("MergeSort test took: " + time + " nanoseconds");
+		print(result);
+		
+		start = System.nanoTime();
+		FinalSorts.quickSort(test3, 0, test3.length);
+		end = System.nanoTime();
+		time = end - start;
+		System.out.println("MergeSort test took: " + time + " nanoseconds");
 		print(test3);
 		
 	}

@@ -1,3 +1,5 @@
+//Steven Fong
+//Period 2
 import java.util.Arrays;
 public class FinalSorts 
 {
@@ -84,7 +86,7 @@ public class FinalSorts
 			int pindex = partition(list, front, back);
 			
 			quickSort(list, front, pindex);
-			quickSort(list, pindex, back);
+			quickSort(list, pindex + 1, back);
 		}
 	}
 }
