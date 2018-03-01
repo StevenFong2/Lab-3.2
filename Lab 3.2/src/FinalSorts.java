@@ -1,6 +1,7 @@
 //Steven Fong
 //Period 2
 import java.util.Arrays;
+import java.util.ArrayList;
 public class FinalSorts 
 {
 	public static String[] mergeSort(String[] list1)
@@ -109,6 +110,59 @@ public class FinalSorts
 			
 			quickSort(list, front, pindex);
 			quickSort(list, pindex + 1, back);
+		}
+	}
+	
+	public static int getMax(int[] arr)
+	{
+		int n = arr.length;
+		int max = arr[0];
+		for (int i = 1; i < n; i++)
+		{
+			if (arr[i] > max)
+			{
+				max = arr[i];
+			}
+		}
+		return max;
+	}
+	
+	public static void countSort(int[] arr, int place)
+	{
+		int n = arr.length;
+		int [] count = new int[10];
+		int [] result = new int[n];
+		int i;
+		
+		for (i = 0; i < n; i++)
+		{
+			count [(arr[i]/place)%10]++;
+		}
+		
+		for (i = 1; i < 10; i++)
+		{
+			count[i] += count[i-1];
+		}
+		
+		for (i = n - 1; i >= 0; i--)
+		{
+			result[count[(arr[i]/place)%10] - 1] = arr[i];
+			count[(arr[i]/place)%10]--;
+		}
+		
+		for (i = 0; i < n; i++)
+		{
+			arr[i] = result[i];
+		}
+	}
+	
+	public static void radixSort(int [] arr)
+	{
+		int max = getMax(arr);
+		
+		for (int i = 1; i <= max; i*=10)
+		{
+			countSort(arr, i);
 		}
 	}
 }
